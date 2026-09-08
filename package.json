@@ -1,0 +1,57 @@
+{
+  "name": "routeflow-backend",
+  "version": "1.0.0",
+  "description": "RouteFlow Backend - Express.js API with PostgreSQL, bcrypt, and JWT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "db:migrate": "knex migrate:latest",
+    "db:seed": "knex seed:run"
+  },
+  "dependencies": {
+    "@types/express-validator": "^3.0.2",
+    "@types/nodemailer": "^8.0.1",
+    "@types/socket.io": "^3.0.2",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.3.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "nodemailer": "^9.0.6",
+    "pg": "^8.11.3",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "twilio": "^6.1.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^30.0.0",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.10.6",
+    "@types/pg": "^8.10.9",
+    "@types/supertest": "^7.2.1",
+    "jest": "^30.4.2",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.12",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "express",
+    "postgresql",
+    "bcrypt",
+    "jwt",
+    "auth"
+  ],
+  "license": "MIT"
+}

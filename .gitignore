@@ -1,0 +1,149 @@
+# =============================================================================
+# RouteFlow — comprehensive .gitignore
+# Backend: Node.js / Express / TypeScript / Knex.js / PostgreSQL
+# Frontend: Next.js (lives in routeflow-frontend/ — separate git repo)
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Dependencies
+# -----------------------------------------------------------------------------
+node_modules/
+.pnpm-store/
+.yarn/
+.pnpm/
+bower_components/
+
+# -----------------------------------------------------------------------------
+# Build Outputs
+# -----------------------------------------------------------------------------
+dist/
+build/
+out/
+.next/                       # Next.js build output (frontend)
+*.tsbuildinfo               # TypeScript incremental type-check/build cache
+*.js.map                    # Generated source maps
+*.d.ts.map
+
+# -----------------------------------------------------------------------------
+# Environment & Secrets
+# -----------------------------------------------------------------------------
+# Ignore all env files — only committed templates are re-included below.
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+*.pem
+
+# Keep these template files for onboarding other developers.
+!.env.example
+
+# -----------------------------------------------------------------------------
+# Database & Local Data
+# -----------------------------------------------------------------------------
+# Local SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# SQL dump files (migrations are committed separately as .js files)
+*.sql
+!database-setup.sql          # Project setup script — whitelist
+
+# Migration / knex temp files
+*.tmp
+.knex/temp/
+
+# -----------------------------------------------------------------------------
+# Logs
+# -----------------------------------------------------------------------------
+logs/
+*.log
+*.log.*
+npm-debug.log*
+npm-error.log*
+npm-warn.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.nuxt/                      # Nuxt (if ever added)
+
+# -----------------------------------------------------------------------------
+# Test Artifacts & Coverage
+# -----------------------------------------------------------------------------
+coverage/
+.nyc_output/
+.jest-cache/
+.parcel-cache/
+.rspec_status/
+test-results/
+playwright-report/
+.coverage/
+.qa/                         # QA session artifacts (tokens, ids, response dumps, logs)
+
+# -----------------------------------------------------------------------------
+# OS & Editor Files
+# -----------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs_vista.jpg
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.tmp/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ / WebStorm / GoLand
+.idea/
+*.iws
+*.iml
+
+# Vim
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Emacs
+*.elc
+*._start
+
+# Sublim Text
+*.tmlanguage.cache
+
+# =============================================================================
+# Framework-Specific (future-proofing)
+# =============================================================================
+# Next.js
+/.next
+/out
+.vercel
+
+# =============================================================================
+# Project-Specific
+# =============================================================================
+# routeflow-frontend/ is a nested repo with its own .git and .gitignore.
+# Prevent the root repo from accidentally tracking its files.
+routeflow-frontend/
+
+# Claude Code local settings may embed secrets (permission allow-lists with
+# embedded credentials).  Commit settings.json (team-shared) but not local.
+.claude/settings.local.json
+.claude/*.local.json
